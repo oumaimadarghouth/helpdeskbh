@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <h2>Admin Dashboard</h2>
+      <p class="muted">Gestion des utilisateurs & supervision HelpDesk.</p>
+    </div>
+
+     <hr />
+
+<router-outlet></router-outlet>  
+</div>
+
+  <div class="grid grid-3" style="margin-top:14px">
+    <div class="card">
+      <h3>Utilisateurs</h3>
+      <p class="muted">Créer / activer / désactiver agents et helpdesk.</p>
+      <a routerLink="/users">Gérer Users</a>
+    </div>
+
+    <div class="card">
+      <h3>Tickets</h3>
+      <p class="muted">Accès futur (phase 2).</p>
+      <span class="badge">Bientôt</span>
+    </div>
+
+    <div class="card">
+      <h3>Reporting</h3>
+      <p class="muted">KPIs et tableaux de bord.</p>
+      <span class="badge">Bientôt</span>
+    </div>
+
+    <div class="card">
+  <h3>Demandes lien mot de passe</h3>
+  <p class="muted">Voir les demandes et renvoyer un nouveau lien.</p>
+  <a routerLink="/password-reset-requests">Voir demandes</a>
+</div>
+
+  </div>
+</div>

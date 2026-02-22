@@ -1,0 +1,477 @@
+/* ===== Brand block ===== */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  min-width: 420px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  /* = hauteur navbar */
+}
+
+/* ✅ LOGO BH GRAND + LISIBLE */
+.brand-logo img {
+  height: 110px;
+  /* Taille ajustée pour le header sans cadre */
+  width: auto;
+  object-fit: contain;
+  /* Rend le logo blanc et propre sur fond sombre */
+  filter: grayscale(100%) brightness(1000%);
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+/* léger effet premium au hover */
+.navbar-brand:hover .brand-logo img {
+  transform: scale(1.05);
+  filter: grayscale(100%) brightness(1000%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+/* léger effet premium au hover */
+.navbar-brand:hover .logo {
+  transform: scale(1.05);
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ligne titre */
+.brand-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Nom application */
+.product-name {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  color: var(--bh-red);
+}
+
+.brand-separator {
+  color: rgba(255, 255, 255, .65);
+  font-weight: 950;
+  font-size: 22px;
+}
+
+.brand-text {
+  color: var(--bh-red);
+  /* 🎨 HelpDesk en rouge BH */
+  font-weight: 950;
+  font-size: 20px;
+  letter-spacing: .4px;
+}
+
+.brand-slogan {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .78);
+}
+
+.brand-divider {
+  width: 2px;
+  height: 54px;
+  background: rgba(255, 255, 255, .28);
+  border-radius: 2px;
+}
+
+/* ===== Role badge ===== */
+.role-badge {
+  padding: 6px 12px;
+  font-size: 9px;
+  font-weight: 900;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .12);
+}
+
+.role-badge.is-admin {
+  background: rgba(193, 18, 31, .18);
+  border-color: rgba(193, 18, 31, .35);
+}
+
+.role-badge.is-agent {
+  background: rgba(245, 158, 11, .18);
+  border-color: rgba(245, 158, 11, .35);
+}
+
+.role-badge.is-user {
+  background: rgba(31, 138, 112, .18);
+  border-color: rgba(31, 138, 112, .35);
+}
+
+/* ===== Right actions (theme + user) ===== */
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Theme toggle button */
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .18s ease;
+}
+
+/* Header shell */
+.theme-btn:hover {
+  background: rgba(255, 255, 255, .14);
+  transform: translateY(-1px);
+}
+
+/* ===== Site header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, var(--bh-navy), #102a52);
+  border-bottom: 1px solid rgba(255, 255, 255, .10);
+  box-shadow: 0 10px 30px rgba(11, 31, 59, .22);
+}
+
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  height: 90px;
+}
+
+.navbar-inner {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.left {
+  justify-self: start;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .25));
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-separator {
+  color: rgba(255, 255, 255, .65);
+  font-weight: 950;
+  font-size: 20px;
+}
+
+.brand-text {
+  color: var(--bh-red);
+  font-weight: 950;
+  font-size: 20px;
+  letter-spacing: .3px;
+}
+
+.brand-slogan {
+  color: rgba(255, 255, 255, .75);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* Role badge */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 950;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .10);
+  color: #fff;
+}
+
+.role-badge.is-admin {
+  background: rgba(193, 18, 31, .18);
+  border-color: rgba(193, 18, 31, .35);
+}
+
+.role-badge.is-agent {
+  background: rgba(245, 158, 11, .18);
+  border-color: rgba(245, 158, 11, .35);
+}
+
+.role-badge.is-user {
+  background: rgba(31, 138, 112, .18);
+  border-color: rgba(31, 138, 112, .35);
+}
+
+/* Nav links (center) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .22);
+  backdrop-filter: blur(8px);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .92);
+  font-weight: 900;
+  letter-spacing: .2px;
+  transition: .18s ease;
+  opacity: .95;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, .16);
+  color: #fff;
+}
+
+/* Theme button */
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: .18s ease;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, .14);
+  transform: translateY(-1px);
+}
+
+/* User area (keep yours, trimmed) */
+.user-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .10);
+  transition: .18s ease;
+}
+
+.user-area:hover {
+  background: rgba(255, 255, 255, .10);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, var(--bh-red), #ff4d5a);
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.user-name {
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.user-role {
+  color: rgba(255, 255, 255, .75);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.chev {
+  color: rgba(255, 255, 255, .85);
+  font-weight: 900;
+  transition: .18s ease;
+}
+
+.chev.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 210px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 12px;
+  font-weight: 850;
+  color: var(--bh-navy);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(11, 31, 59, .05);
+}
+
+.menu-sep {
+  height: 1px;
+  background: var(--border);
+}
+
+.menu-item.danger {
+  color: var(--bh-red);
+}
+
+.menu-item.danger:hover {
+  background: rgba(193, 18, 31, .06);
+}
+
+/* Dark mode (header only) */
+.site-header.dark {
+  background: linear-gradient(90deg, #070e1c, #0b1a33);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar {
+    height: auto;
+  }
+
+  .navbar-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 0;
+    justify-items: center;
+  }
+
+  .right {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 820px) {
+  .user-meta {
+    display: none;
+  }
+}
+
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, .14);
+  transform: translateY(-1px);
+}
+
+/* ===== Dark mode (simple) ===== */
+/* Quand theme === 'dark' on change le background du header + nav-links */
+.site-header.dark {
+  background: linear-gradient(90deg, #070e1c, #0b1a33);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+/* Optionnel: nav-links un peu plus sombre en dark */
+.site-header.dark .nav-links {
+  background: rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .08);
+}
+
+.user-area {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 9999;
+}
+
+.logout-btn {
+  margin-left: 10px;
+}

@@ -1,0 +1,182 @@
+/* =========================
+   Admin Dashboard layout
+   ========================= */
+
+/* Header row (title + button) */
+.row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+/* Make hr look clean */
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* Grid cards */
+.grid{
+  display:grid;
+  gap: 14px;
+}
+
+.grid-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .row{ flex-direction: column; align-items: stretch; }
+  .grid-3{ grid-template-columns: 1fr; }
+  .btn{ width: 100%; }
+}
+
+/* Card content spacing */
+.grid .card{
+  padding: 16px;
+  transition: .18s ease;
+}
+
+.grid .card h3{
+  margin: 0 0 6px;
+  font-weight: 850;
+  letter-spacing: .2px;
+  color: var(--bh-navy);
+}
+
+.grid .card .muted{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Links inside cards -> button-like */
+.grid .card a{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--bh-navy);
+  text-decoration: none;
+  font-weight: 800;
+  transition: .18s ease;
+}
+.grid .card a:hover{
+  border-color: rgba(11,31,59,.45);
+  box-shadow: 0 0 0 3px rgba(11,31,59,.08);
+}
+
+/* Hover card effect */
+.grid .card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Badge alignment */
+.grid .card .badge{
+  margin-top: 6px;
+}
+
+/* Optional: make the top CTA link look like a button even if it's <a> */
+a.btn{
+  text-decoration: none;
+}
+/* =========================
+   Admin Dashboard layout
+   ========================= */
+
+/* Header row (title + button) */
+.row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+/* Make hr look clean */
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+/* Grid cards */
+.grid{
+  display:grid;
+  gap: 14px;
+}
+
+.grid-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .row{ flex-direction: column; align-items: stretch; }
+  .grid-3{ grid-template-columns: 1fr; }
+  .btn{ width: 100%; }
+}
+
+/* Card content spacing */
+.grid .card{
+  padding: 16px;
+  transition: .18s ease;
+}
+
+.grid .card h3{
+  margin: 0 0 6px;
+  font-weight: 850;
+  letter-spacing: .2px;
+  color: var(--bh-navy);
+}
+
+.grid .card .muted{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Links inside cards -> button-like */
+.grid .card a{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--bh-navy);
+  text-decoration: none;
+  font-weight: 800;
+  transition: .18s ease;
+}
+.grid .card a:hover{
+  border-color: rgba(11,31,59,.45);
+  box-shadow: 0 0 0 3px rgba(11,31,59,.08);
+}
+
+/* Hover card effect */
+.grid .card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Badge alignment */
+.grid .card .badge{
+  margin-top: 6px;
+}
+
+/* Optional: make the top CTA link look like a button even if it's <a> */
+a.btn{
+  text-decoration: none;
+}

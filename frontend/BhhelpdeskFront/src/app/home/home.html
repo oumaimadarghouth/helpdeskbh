@@ -1,0 +1,105 @@
+<section class="home-hero">
+  <div class="container home-content">
+    <div class="home-text">
+      <h1>
+        HelpDesk Intelligent <br />
+        <span>BH Assurance</span>
+      </h1>
+
+      <p>
+        Gérez les tickets plus efficacement grâce à l’intelligence artificielle,
+        à l’automatisation et à une supervision centralisée.
+      </p>
+
+      <div class="home-actions">
+        <a routerLink="/tickets" class="btn btn-primary">
+          Créer un ticket
+        </a>
+        <a routerLink="/dashboard" class="btn btn-outline">
+          Accéder au dashboard
+        </a>
+      </div>
+    </div>
+
+    <div class="home-visual">
+      <img src="/assets/home/helpdesk2.png" alt="HelpDesk illustration" loading="lazy" />
+    </div>
+    <!-- CTA selon rôle -->
+    <div class="home-actions">
+      <a *ngIf="role === 'ADMIN'" routerLink="/users" class="btn btn-primary">
+        Ouvrir Admin Dashboard
+      </a>
+
+      <a *ngIf="role === 'AGENT'" routerLink="/dashboard" class="btn btn-primary">
+        Voir mes tickets
+      </a>
+
+      <a *ngIf="role === 'USER'" routerLink="/tickets" class="btn btn-primary">
+        Créer un ticket
+      </a>
+
+      <a routerLink="/tickets" class="btn btn-outline">
+        Tous les tickets
+      </a>
+    </div>
+
+    <!-- Right: KPIs -->
+    <div class="home-visual animate-fade">
+      <div class="glass">
+        <div class="mini-title">KPIs</div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Tickets traités</div>
+            <div class="kpi-value">{{ kpis.ticketsResolved }}</div>
+            <div class="kpi-subtle">+{{ kpis.deltaResolved }} vs hier</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">SLA respecté</div>
+            <div class="kpi-value">{{ kpis.sla }}%</div>
+            <div class="kpi-subtle">Objectif: {{ kpis.slaTarget }}%</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">IA accuracy</div>
+            <div class="kpi-value">{{ kpis.aiAccuracy }}%</div>
+            <div class="kpi-subtle">Catégorie / priorité</div>
+          </div>
+
+          <div class="kpi-card kpi-wide">
+            <div class="kpi-label">Temps moyen de résolution</div>
+            <div class="kpi-value">{{ kpis.avgResolutionHours }}h</div>
+            <div class="kpi-subtle">Ce mois</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment ça marche -->
+    <div class="container how">
+      <h2 class="how-title animate-up delay-1">Comment ça marche ?</h2>
+
+      <div class="how-grid">
+        <div class="how-card animate-up delay-1">
+          <div class="how-badge">1</div>
+          <h3>Création guidée</h3>
+          <p class="muted">L’IA pose les bonnes questions pour compléter le ticket.</p>
+        </div>
+
+        <div class="how-card animate-up delay-2">
+          <div class="how-badge">2</div>
+          <h3>Priorisation & routage</h3>
+          <p class="muted">Catégorie, priorité et assignation automatiques.</p>
+        </div>
+
+        <div class="how-card animate-up delay-3">
+          <div class="how-badge">3</div>
+          <h3>Suivi & reporting</h3>
+          <p class="muted">KPIs, SLA, charge des agents et tendances en temps réel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

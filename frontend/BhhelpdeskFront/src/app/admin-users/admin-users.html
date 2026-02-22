@@ -1,0 +1,144 @@
+<div class="page">
+  <div class="container" style="display:grid; gap:18px;">
+
+    <!-- Header -->
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+      <div>
+        <h2 class="card-title" style="margin:0;">Gestion des utilisateurs</h2>
+        <div class="subtle">Créer des AGENT / MANAGER, activer/désactiver, filtrer.</div>
+      </div>
+
+      <button class="btn btn-outline" (click)="load()" [disabled]="loadingList">
+        {{ loadingList ? 'Chargement...' : 'Rafraîchir' }}
+      </button>
+    </div>
+
+    <!-- Alerts -->
+    <div *ngIf="msg" class="alert alert-success">{{ msg }}</div>
+    <div *ngIf="err" class="alert alert-danger">{{ err }}</div>
+
+    <!-- Create card -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title" style="font-size:16px;">Créer un utilisateur</h3>
+        <p class="subtle" style="margin:6px 0 0;">Un email sera envoyé automatiquement (si Gmail configuré).</p>
+      </div>
+
+      <div class="card-body">
+        <form (ngSubmit)="create()" style="display:grid; gap:14px;">
+          <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:12px;">
+            <div class="field">
+              <label class="label">Email</label>
+              <input class="input" [(ngModel)]="form.email" name="email" required />
+            </div>
+
+            <div class="field">
+              <label class="label">Prénom</label>
+              <input class="input" [(ngModel)]="form.first_name" name="first_name" />
+            </div>
+
+            <div class="field">
+              <label class="label">Nom</label>
+              <input class="input" [(ngModel)]="form.last_name" name="last_name" />
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:end; flex-wrap:wrap;">
+            <div class="field" style="width:220px;">
+              <label class="label">Rôle</label>
+              <select class="select" [(ngModel)]="form.role" name="role" required>
+                <option value="AGENT">AGENT</option>
+                <option value="MANAGER">MANAGER</option>
+              </select>
+            </div>
+
+            <button class="btn btn-primary" type="submit" [disabled]="creating">
+              {{ creating ? 'Création...' : 'Créer' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card">
+      <div class="card-body" style="display:grid; gap:12px;">
+        <div class="card-title" style="font-size:14px;">Filtres</div>
+
+        <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap:12px; align-items:end;">
+          <div class="field">
+            <label class="label">Recherche</label>
+            <input class="input" [(ngModel)]="filters.q" name="q" placeholder="email, username, nom..." />
+          </div>
+
+          <div class="field">
+            <label class="label">Rôle</label>
+            <select class="select" [(ngModel)]="filters.role" name="role">
+              <option value="">Tous</option>
+              <option value="AGENT">AGENT</option>
+              <option value="MANAGER">MANAGER</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label">Statut</label>
+            <select class="select" [(ngModel)]="filters.is_active" name="is_active">
+              <option value="">Tous</option>
+              <option value="true">Actif</option>
+              <option value="false">Inactif</option>
+            </select>
+          </div>
+
+          <button class="btn btn-outline" (click)="load()" [disabled]="loadingList">
+            Appliquer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- List -->
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Nom</th>
+              <th>Rôle</th>
+              <th>Statut</th>
+              <th style="width:180px;">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let u of users">
+              <td style="font-weight:800;">{{ u.email }}</td>
+              <td>{{ u.first_name }} {{ u.last_name }}</td>
+              <td><span class="badge">{{ u.role }}</span></td>
+              <td>
+                <span class="badge" [ngClass]="u.is_active ? 'badge-success' : 'badge-danger'">
+                  {{ u.is_active ? 'Actif' : 'Inactif' }}
+                </span>
+              </td>
+              <td>
+                <div style="display:flex; gap:6px;">
+                  <button class="btn" [ngClass]="u.is_active ? 'btn-danger' : 'btn-primary'" (click)="toggle(u)">
+                    {{ u.is_active ? 'Désactiver' : 'Activer' }}
+                  </button>
+                  <button class="btn btn-danger" (click)="deleteUser(u)" title="Supprimer">
+                    🗑️
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr *ngIf="users.length === 0">
+              <td colspan="5" class="subtle">Aucun utilisateur trouvé.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

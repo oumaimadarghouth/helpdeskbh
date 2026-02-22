@@ -1,0 +1,33 @@
+
+<div class="page">
+  <div class="container" style="display:grid; place-items:center;">
+    <div class="card" style="width:min(520px, 100%);">
+      <div class="card-header">
+        <h2 class="card-title">Connexion</h2>
+        <p class="subtle" style="margin:6px 0 0;">
+          Connecte-toi avec ton email/username et mot de passe.
+        </p>
+      </div>
+
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" style="display:grid; gap:14px;">
+          <div class="field">
+            <label class="label">Email / Username</label>
+            <input class="input" [(ngModel)]="username" name="username" required />
+          </div>
+
+          <div class="field">
+            <label class="label">Mot de passe</label>
+            <input class="input" [(ngModel)]="password" name="password" type="password" required />
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="loading">
+            {{ loading ? 'Connexion...' : 'Se connecter' }}
+          </button>
+
+          <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

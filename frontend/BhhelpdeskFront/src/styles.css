@@ -1,0 +1,203 @@
+/* =========================
+   BH Assurance Design System
+   ========================= */
+
+:root{
+  /* Brand */
+  --bh-navy: #0B1F3B;      /* bleu marine */
+  --bh-navy-2: #102a52;
+  --bh-red:  #C1121F;      /* rouge gazelle (proche) */
+  --bh-black:#0B0F19;
+  --bh-white:#FFFFFF;
+
+  /* UI */
+  --bg: #F6F8FC;
+  --card: #FFFFFF;
+  --text: #0B0F19;
+  --muted: #5B677A;
+  --border: #E3E8F2;
+
+  /* States */
+  --success:#1F8A70;
+  --warning:#F59E0B;
+  --danger: var(--bh-red);
+
+  /* Effects */
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(11, 31, 59, 0.10);
+  --shadow-sm: 0 6px 18px rgba(11, 31, 59, 0.10);
+
+  /* Typography */
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+    /* Header */
+  --header-bg: linear-gradient(90deg, var(--bh-navy), var(--bh-navy-2));
+  --header-text: #ffffff;
+  --header-glass: rgba(255,255,255,.08);
+}
+
+/* ===== DARK MODE ===== */
+:root.dark {
+  --bg: #070e1c;
+  --card: #0b1a33;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: rgba(255,255,255,.12);
+
+  --header-bg: linear-gradient(90deg, #070e1c, #0b1a33);
+  --header-text: #ffffff;
+  --header-glass: rgba(255,255,255,.06);
+}
+
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Layout helpers */
+.container{
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.page{
+  padding: 28px 0 60px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.card-header{
+  padding: 18px 18px 0;
+}
+.card-body{
+  padding: 18px;
+}
+.card-title{
+  margin:0;
+  font-weight: 750;
+  letter-spacing: .2px;
+}
+.subtle{
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .18s ease;
+  user-select:none;
+}
+.btn:disabled{
+  opacity:.6; cursor:not-allowed;
+}
+
+.btn-primary{
+  background: var(--bh-navy);
+  color: var(--bh-white);
+}
+.btn-primary:hover{ filter: brightness(1.05); }
+
+.btn-danger{
+  background: var(--bh-red);
+  color: var(--bh-white);
+}
+.btn-danger:hover{ filter: brightness(1.05); }
+
+.btn-outline{
+  background: transparent;
+  border-color: var(--border);
+  color: var(--bh-navy);
+}
+.btn-outline:hover{
+  border-color: var(--bh-navy);
+  box-shadow: 0 0 0 3px rgba(11,31,59,.08);
+}
+
+/* Inputs */
+.field{ display:flex; flex-direction:column; gap:6px; }
+.label{ font-size: 13px; color: var(--muted); font-weight:700; }
+.input, .select{
+  width:100%;
+  padding: 12px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  transition: .18s ease;
+}
+.input:focus, .select:focus{
+  border-color: rgba(11,31,59,.6);
+  box-shadow: 0 0 0 4px rgba(11,31,59,.10);
+}
+
+/* Alerts */
+.alert{
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 650;
+}
+.alert-success{ border-color: rgba(31,138,112,.35); color: var(--success); }
+.alert-danger{ border-color: rgba(193,18,31,.35); color: var(--danger); }
+
+/* Badges */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid var(--border);
+}
+.badge-success{ color: var(--success); border-color: rgba(31,138,112,.35); }
+.badge-danger{ color: var(--danger); border-color: rgba(193,18,31,.35); }
+.badge-muted{ color: var(--muted); }
+
+/* Table */
+.table{
+  width:100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow:hidden;
+}
+.table th, .table td{
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align:left;
+  font-size: 14px;
+}
+.table th{
+  background: #F1F4FA;
+  color: var(--bh-navy);
+  font-weight: 800;
+}
+.table tr:hover td{ background: rgba(11,31,59,.03); }
+
+/* Top bar (optionnel) */
+.topbar{
+  background: var(--bh-navy);
+  color: var(--bh-white);
+  padding: 12px 0;
+}
+.topbar .brand{
+  font-weight: 900;
+  letter-spacing:.4px;
+}
+.topbar .brand span{ color: var(--bh-red); }

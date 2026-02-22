@@ -1,0 +1,74 @@
+<header class="site-header" [class.dark]="theme === 'dark'">
+  <nav class="navbar">
+    <div class="navbar-inner">
+
+      <!-- LEFT: Brand -->
+      <!-- LEFT: Brand -->
+      <div class="left">
+        <a class="navbar-brand" [routerLink]="homeLink$ | async">
+
+          <!-- Logo BH -->
+          <div class="brand-logo">
+            <img src="/assets/home/BH-Assurance.png" alt="BH Assurance" class="logo" />
+          </div>
+
+          <!-- Séparateur -->
+          <span class="brand-divider"></span>
+
+          <!-- Produit -->
+          <div class="brand-block">
+            <div class="brand-title">
+              <span class="product-name">InsightDesk</span>
+
+              <span class="role-badge" [ngClass]="(roleClass$ | async)">
+                {{ ((user$ | async)?.role || 'USER') | uppercase }}
+              </span>
+            </div>
+
+            <div class="brand-slogan">
+              Gestion intelligente des incidents
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+
+      <!-- CENTER: Links -->
+      <div class="center nav-links">
+        <a [routerLink]="homeLink$ | async" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link">Home</a>
+        <a routerLink="/tickets" routerLinkActive="active" class="nav-link">Tickets</a>
+        <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
+      </div>
+
+      <!-- RIGHT: actions -->
+      <div class="right">
+        <button class="theme-btn" type="button" (click)="toggleTheme()" aria-label="Toggle theme">
+          <span *ngIf="theme === 'light'">🌙</span>
+          <span *ngIf="theme === 'dark'">☀️</span>
+        </button>
+
+        <div class="user-area" (click)="$event.stopPropagation(); toggleMenu()" tabindex="0"
+          (keydown.enter)="toggleMenu()">
+          <div class="avatar">{{ (initials$ | async) }}</div>
+
+          <div class="user-meta">
+            <div class="user-name">{{ (user$ | async)?.fullName || 'Utilisateur' }}</div>
+            <div class="user-role">{{ (user$ | async)?.role || '—' }}</div>
+          </div>
+
+          <span class="chev" [class.open]="menuOpen">▾</span>
+
+          <div class="menu" *ngIf="menuOpen" (click)="$event.stopPropagation()">
+            <a class="menu-item" routerLink="/profile" (click)="closeMenu()">Profil</a>
+            <a class="menu-item" routerLink="/settings" (click)="closeMenu()">Paramètres</a>
+            <div class="menu-sep"></div>
+            <button class="menu-item danger" type="button" (click)="logout()">Déconnexion</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,34 @@
+.muted{ color: var(--muted); }
+.success{
+  color: var(--success);
+  font-size: 14px;
+  margin-top: 6px;
+}
+.loading{
+  text-align: center;
+  padding: 20px 0;
+}
+.title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-group{
+  margin-bottom: 16px;
+}
+.form-actions{
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-actions .btn{
+  flex: 1;
+}
+.form-actions .btn + .btn{
+  margin-left: 12px;
+}
+.reset-link{
+  font-size: 14px;
+  color: var(--primary);
+  cursor: pointer;
+}

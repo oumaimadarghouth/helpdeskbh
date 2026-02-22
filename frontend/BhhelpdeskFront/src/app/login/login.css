@@ -1,0 +1,52 @@
+.auth-card{
+  max-width: 420px;
+  margin: 40px auto;
+}
+.hint{
+  color: var(--muted);
+  margin-top: -6px;
+}
+.error{
+  color: var(--danger);
+  font-size: 14px;
+  margin-top: 6px;
+}
+.success{
+  color: var(--success);
+  font-size: 14px;
+  margin-top: 6px;
+}
+.loading{
+  text-align: center;
+  padding: 20px 0;
+}
+.title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-group{
+  margin-bottom: 16px;
+}
+.form-actions{
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-actions .btn{
+  flex: 1;
+}
+.form-actions .btn + .btn{
+  margin-left: 12px;
+}
+.reset-link{
+  font-size: 14px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+
+
+/* rien d’obligatoire ici car tout est global.
+   si tu veux un petit ajustement local : */
+:host { display:block; }

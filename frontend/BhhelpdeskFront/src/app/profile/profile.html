@@ -1,0 +1,92 @@
+<div class="container page">
+
+  <div class="profile-head">
+    <div>
+      <h1 class="profile-title">Mon Profil</h1>
+      <div class="subtle">Gérez vos informations et la sécurité de votre compte.</div>
+    </div>
+
+    <div class="profile-head-actions">
+      <button class="btn btn-outline" type="button" (click)="loadAll()" [disabled]="loading">
+        Actualiser
+      </button>
+    </div>
+  </div>
+
+ <div *ngIf="toastMsg"
+     class="toast alert"
+     [ngClass]="toastType === 'ok' ? 'alert-success' : 'alert-danger'">
+  {{ toastMsg }}
+</div>
+
+
+  <div class="grid">
+
+    <!-- CARD: Infos -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-row">
+          <h3 class="card-title">Informations</h3>
+          <span class="badge badge-muted">Profil</span>
+        </div>
+        <div class="subtle">Vos données personnelles et helpdesk.</div>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="save()">
+
+          <div class="grid-2">
+            <div class="field">
+              <div class="label">Prénom</div>
+              <input class="input" formControlName="first_name" placeholder="Votre prénom" />
+            </div>
+
+            <div class="field">
+              <div class="label">Nom</div>
+              <input class="input" formControlName="last_name" placeholder="Votre nom" />
+            </div>
+          </div>
+
+          <div class="sp-12"></div>
+
+          <div class="field">
+            <div class="label">Email</div>
+            <input class="input" type="email" formControlName="email" placeholder="ex: you@email.com" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid-2">
+            <div class="field">
+              <div class="label">Téléphone</div>
+              <input class="input" formControlName="phone" placeholder="+216 ..." />
+            </div>
+
+            <div class="field">
+              <div class="label">Département</div>
+              <input class="input" formControlName="department" placeholder="IT / Réseau / ..." />
+            </div>
+          </div>
+
+          <div class="sp-12"></div>
+
+          <div class="field">
+            <div class="label">Type de contrat</div>
+            <input class="input" formControlName="contract_type" placeholder="SLA_GOLD ..." />
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit" [disabled]="saving">
+              {{ saving ? 'Enregistrement...' : 'Enregistrer' }}
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- (Optionnel) CARD sécurité plus tard: ne commente pas, supprime-la ou mets *ngIf="false" -->
+    <!-- <div class="card" *ngIf="false"></div> -->
+
+  </div>
+</div>

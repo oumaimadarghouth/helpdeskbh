@@ -1,0 +1,25 @@
+.muted{ color: var(--muted); }
+.success{
+  color: var(--success);
+  font-size: 14px;
+  margin-top: 6px;
+}       
+.loading{
+  text-align: center;
+  padding: 20px 0;
+}
+.title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+:host { display:block; }
+
+/* Responsive: empile les cards en mobile */
+@media (max-width: 900px){
+  .container > div[style*="repeat(3"]{
+    grid-template-columns: 1fr !important;
+  }
+  .container > div[style*="repeat(2"]{
+    grid-template-columns: 1fr !important;
+  }
+}

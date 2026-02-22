@@ -1,0 +1,88 @@
+<div class="page">
+  <div class="container" style="display:grid; gap:18px;">
+
+    <!-- Header -->
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+      <div>
+        <h2 class="card-title" style="margin:0;">Espace Agent</h2>
+        <div class="subtle">Création et suivi de tickets.</div>
+      </div>
+
+      <button class="btn btn-outline" disabled>
+        Centre d’aide (bientôt)
+      </button>
+    </div>
+
+    <!-- Quick stats -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;">
+      <div class="card">
+        <div class="card-body">
+          <div class="subtle">Tickets ouverts</div>
+          <div style="font-size:26px; font-weight:900; color: var(--bh-navy);">0</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="subtle">En attente</div>
+          <div style="font-size:26px; font-weight:900; color: var(--bh-navy);">0</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="subtle">Résolus</div>
+          <div style="font-size:26px; font-weight:900; color: var(--bh-navy);">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title" style="font-size:16px;">Nouveau ticket</h3>
+          <p class="subtle" style="margin:6px 0 0;">Créer une demande client rapidement.</p>
+        </div>
+        <div class="card-body" style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div class="subtle">Formulaire + catégorie + priorité</div>
+          <button class="btn btn-primary" disabled>Créer (bientôt)</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title" style="font-size:16px;">Mes tickets</h3>
+          <p class="subtle" style="margin:6px 0 0;">Consulter l’état, ajouter des messages, suivre.</p>
+        </div>
+        <div class="card-body" style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div class="subtle">Liste + filtres + statut</div>
+          <button class="btn btn-outline" disabled>Voir (bientôt)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Diagnostic Chat Section -->
+    <div class="card">
+      <div class="card-header" style="background: #f0f7ff; border-bottom: 2px solid #004a99;">
+        <h3 class="card-title" style="color: #004a99;">Assistant Diagnostic Intelligent (Base Salim)</h3>
+        <p class="subtle">L'IA vous aide à identifier et corriger les erreurs de données.</p>
+      </div>
+      <div class="card-body" style="padding: 0;">
+        <app-diagnostic-chat></app-diagnostic-chat>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div class="card">
+      <div class="card-body" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+        <div>
+          <div style="font-weight:900; color:var(--bh-navy);">Aucun ticket pour le moment</div>
+          <div class="subtle">Dès que tu crées un ticket, il apparaîtra ici.</div>
+        </div>
+        <span class="badge badge-muted">BH Helpdesk</span>
+      </div>
+    </div>
+
+  </div>
+</div>
